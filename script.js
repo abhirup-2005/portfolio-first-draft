@@ -1,62 +1,58 @@
-function myProjects() {
-    addProjectToList("Project1", "Used XYZ Bla Bla Bla fsgdfhsdushduisdhsuidhvsdusddvsdv gfwdfgqfg hhk", ".", "repoLink", "liveLink");
-    addProjectToList("Project2", "Used XYZ", ".", "repoLink", "liveLink");
-    addProjectToList("Project1", "Used XYZ", ".", "repoLink", "liveLink");
-addProjectToList("Project2", "Used XYZ", ".", "repoLink", "liveLink");
+import { skills, projects } from "./data.js";
+
+/* Skills */
+const skillList = document.querySelector(".skill-list");
+
+function displaySkills() {
+  skillList.innerHTML = "";
+  skills.forEach(skill => {
+    const li = document.createElement("li");
+    li.textContent = skill;
+    skillList.appendChild(li);
+  });
 }
 
-const containor = document.querySelector(".containor");
+/* Projects */
+const container = document.querySelector(".container");
 
-function Project(title, description, image, repo, live) {
-    this.title = title;
-    this.description = description;
-    this.image = image;
-    this.repo = repo;
-    this.live = live;
+function displayProjects() {
+  container.innerHTML = "";
+
+  projects.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${project.image}" alt="${project.title}">
+      <div class="card-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+      </div>
+      <div class="card-actions">
+        <a href="${project.repo}" target="_blank">Code</a>
+        <a href="${project.live}" target="_blank">Live</a>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
 }
 
-const projectList = [];
+/* Type Name in first load */
+const nameSpan = document.getElementById("name");
+const fullName = nameSpan.textContent;
+let index = 0;
 
-function addProjectToList(title, description, image, repo, live) {
-    const project = new Project(title, description, image, repo, live);
-    projectList.push(project);
+function typeName() {
+  if (index === 0) nameSpan.textContent = "";
+
+  if (index < fullName.length) {
+    nameSpan.textContent += fullName.charAt(index);
+    index++;
+    setTimeout(typeName, 50); // fast, subtle
+  }
 }
 
-function display() {
-    containor.textContent = "";
-    projectList.forEach((project) => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-
-        const image = document.createElement("img");
-        image.classList.add("image");
-        image.src = project.image;
-
-        const title = document.createElement("h2");
-        title.classList.add("title");
-        title.textContent = project.title;
-
-        const description = document.createElement("div");
-        description.classList.add("description");
-        description.textContent = project.description;
-
-        const repoBtn = document.createElement("button");
-        repoBtn.classList.add("repo");
-        repoBtn.textContent = "View Code";
-
-        const liveLinkBtn = document.createElement("button");
-        liveLinkBtn.classList.add("live");
-        liveLinkBtn.textContent = "Live Preview";
-
-        card.appendChild(image);
-        card.appendChild(title);
-        card.appendChild(description);
-        card.appendChild(repoBtn);
-        card.appendChild(liveLinkBtn);
-
-        containor.appendChild(card);
-    })
-}
-
-myProjects();
-display();
+typeName();
+displaySkills();
+displayProjects();
