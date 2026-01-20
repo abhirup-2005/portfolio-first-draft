@@ -90,6 +90,21 @@ body {
     justify-content: center;
 }
 
+#dsa {
+    display: flex;
+    gap: 0.2rem;
+}
+
+#dsa a {
+    text-decoration: none;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+#dsa a:hover {
+    color: var(--muted);
+}
+
 /* Projects */
 .container {
     margin-top: 1.5rem;

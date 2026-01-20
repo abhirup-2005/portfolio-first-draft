@@ -4,7 +4,14 @@ import { skills, projects } from "./data.js";
 const skillList = document.querySelector(".skill-list");
 
 function displaySkills() {
-  skillList.innerHTML = "";
+  skillList.innerHTML = `
+    <li id="dsa">
+    DSA
+      <a href="https://leetcode.com/u/dzmxvEYWGR/" target="_blank" rel="noopener">
+        ( <i class="fa-solid fa-link"></i>LeetCode )
+      </a>
+    </li>
+  `;
   skills.forEach(skill => {
     const li = document.createElement("li");
     li.textContent = skill;

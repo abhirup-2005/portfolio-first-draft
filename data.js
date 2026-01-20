@@ -2,7 +2,6 @@ export const skills = [
   "HTML5",
   "CSS (Flexbox, Grid)",
   "JavaScript",
-  "Data Structures & Algorithms",
   "C++",
   "Python",
   "C"
