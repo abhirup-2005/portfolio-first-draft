@@ -39,6 +39,9 @@ body {
 }
 
 .socials a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     text-decoration: none;
     color: var(--muted);
 }
@@ -133,6 +136,13 @@ body {
     text-decoration: none;
     color: var(--accent);
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-actions a:hover {
+    color: var(--text);
 }
 
 /* Footer */

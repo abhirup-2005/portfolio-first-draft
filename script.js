@@ -29,8 +29,10 @@ function displayProjects() {
         <p>${project.description}</p>
       </div>
       <div class="card-actions">
-        <a href="${project.repo}" target="_blank">Code</a>
-        <a href="${project.live}" target="_blank">Live</a>
+        <a href="${project.repo}" target="_blank">
+            <i class="fa-solid fa-code"></i> View Code</a>
+        <a href="${project.live}" target="_blank">
+        <i class="fa-solid fa-eye"></i> Live Preview</a>
       </div>
     `;
 
