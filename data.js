@@ -9,6 +9,13 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Tic Tac Toe Game",
+    description: "A modular Tic Tac Toe game built with vanilla JavaScript using IIFE modules, focusing on separation of concerns and state management.",
+    image: "./assets/ttt.png",
+    repo: "https://github.com/abhirup-2005/tic-tac-toe",
+    live: "https://abhirup-2005.github.io/tic-tac-toe/"
+  },
+  {
     title: "Library Web App",
     description: "A simple browser-based library management web app built with vanilla JavaScript, featuring CRUD functionality and persistent data storage using localStorage.",
     image: "./assets/library.png",
