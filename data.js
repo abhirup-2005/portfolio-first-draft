@@ -2,12 +2,20 @@ export const skills = [
   "HTML5",
   "CSS (Flexbox, Grid)",
   "JavaScript",
+  "Webpack",
   "C++",
   "Python",
   "C"
 ];
 
 export const projects = [
+  {
+    title: "Todo List Web App",
+    description: "A clean and intuitive Todo List app that helps users manage tasks using projects, priorities, and deadlines. It includes features like checklists, notes, real-time search, and visual analytics to track completed, pending, and overdue tasks efficiently.",
+    image: "./assets/todo.png",
+    repo: "https://github.com/abhirup-2005/todo-list",
+    live: "https://abhirup-2005.github.io/todo-list/"
+  },
   {
     title: "Tic Tac Toe Game",
     description: "A modular Tic Tac Toe game built with vanilla JavaScript using IIFE modules, focusing on separation of concerns and state management.",
